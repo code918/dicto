@@ -12,6 +12,11 @@ MODEL_DIR    := $(HOME)/Library/Application Support/Dicto/models
 MODEL        := ggml-large-v3-turbo-q5_0.bin
 MODEL_URL    := https://huggingface.co/ggerganov/whisper.cpp/resolve/main/$(MODEL)
 
+# 개인 설정(서명 팀 ID 등)은 저장소에 올리지 않는 local.mk에 둔다 (.gitignore)
+#   예) DEVELOPMENT_TEAM := ABCDE12345
+-include local.mk
+TEAM_FLAG    := $(if $(DEVELOPMENT_TEAM),DEVELOPMENT_TEAM=$(DEVELOPMENT_TEAM))
+
 GREEN := \033[0;32m
 YELLOW := \033[0;33m
 RESET := \033[0m
@@ -33,7 +38,7 @@ $(PROJECT): project.yml
 build: $(PROJECT) ## 빌드
 	@echo "$(GREEN)▶ 빌드 중...$(RESET)"
 	xcodebuild -project $(PROJECT) -scheme $(SCHEME) -configuration $(CONFIG) \
-		-derivedDataPath $(DERIVED_DATA) -destination 'platform=macOS' build \
+		-derivedDataPath $(DERIVED_DATA) -destination 'platform=macOS' $(TEAM_FLAG) build \
 		| grep -E "error:|warning: unre|BUILD|Compiling|Linking" || true
 	@test -d $(APP) && echo "$(GREEN)✔ $(APP)$(RESET)"
 

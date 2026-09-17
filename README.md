@@ -29,7 +29,11 @@ make run      # 빌드 후 실행
 make install  # /Applications 에 복사
 ```
 
-직접 빌드할 때는 `project.yml`의 `DEVELOPMENT_TEAM`에 본인 Apple 개발자 팀 ID를 넣으세요. (서명이 고정돼야 손쉬운 사용 권한이 빌드마다 풀리지 않습니다)
+직접 빌드할 때는 프로젝트 루트에 `local.mk` 파일을 만들고 본인 Apple 개발자 팀 ID를 넣으세요. 서명이 고정돼야 손쉬운 사용 권한이 빌드마다 풀리지 않습니다. (`local.mk`는 git에 올라가지 않습니다)
+
+```make
+DEVELOPMENT_TEAM := ABCDE12345
+```
 
 첫 실행 시 권한 2개 허용:
 1. 마이크

@@ -47,6 +47,12 @@ make install  # /Applications 에 복사
 - 자동 학습: 결과에 나온 고유명사/약어(Supabase, MVP 등)를 `learned.txt`에 세고 2회 이상이면 사전에 반영
 - 기록: `~/Library/Application Support/Dicto/history.log` (RAW/OUT 쌍)
 
+## 개인정보
+
+받아쓴 원문과 정제 결과는 내 맥의 `~/Library/Application Support/Dicto/` 안(`history.log`, `dicto.log`)에만 저장되고 따로 전송되지 않습니다. 필요 없으면 지워도 됩니다.
+
+단, 정제 엔진으로 Claude를 고르면 받아쓴 텍스트가 본인이 로그인한 Claude Code를 통해 Anthropic으로 전송됩니다. 기기 밖으로 보내고 싶지 않으면 정제를 끄거나 Apple 온디바이스 엔진을 쓰세요.
+
 ## 파일
 
 ```

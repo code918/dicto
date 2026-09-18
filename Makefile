@@ -24,7 +24,7 @@ RESET := \033[0m
 .PHONY: help
 help: ## 사용 가능한 명령 목록 표시
 	@echo "$(GREEN)Dicto Make 명령$(RESET)"
-	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
+	@grep -hE '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "  $(YELLOW)%-12s$(RESET) %s\n", $$1, $$2}'
 
 .PHONY: gen

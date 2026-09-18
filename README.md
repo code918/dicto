@@ -12,6 +12,10 @@
 
 ## 화면
 
+<img src="docs/images/demo.gif" width="600" alt="Dicto 동작 흐름">
+
+*동작 흐름을 같은 색·비율로 그린 재현 영상입니다 (실제 화면 녹화 아님).*
+
 녹음 중에는 화면 맨 아래에 이 파형만 떠 있습니다. 창을 가리지 않고, 입력 포커스도 뺏지 않습니다.
 
 <img src="docs/images/overlay.png" width="220" alt="녹음 중 파형 오버레이">
@@ -93,6 +97,7 @@ Dicto/
 scripts/
   gen_sounds.py               녹음 시작/끝 효과음 합성 (make sounds)
   gen_icon.swift              앱 아이콘 그리기 (make icon)
+  gen_demo.swift              README 데모 GIF 그리기 (make demo)
 ```
 
 효과음과 아이콘은 외부 소스 없이 위 스크립트로 직접 만든 것입니다.

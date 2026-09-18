@@ -85,6 +85,10 @@ sounds: ## 녹음 시작/끝 효과음 재생성 (코드로 합성)
 icon: ## 앱 아이콘 재생성 (코드로 그림)
 	swift scripts/gen_icon.swift
 
+.PHONY: demo
+demo: ## README 데모 GIF 재생성 (코드로 그림)
+	swift scripts/gen_demo.swift
+
 .PHONY: log
 log: ## 앱 로그 보기
 	log stream --predicate 'subsystem == "com.lake514.dicto"' --level debug
